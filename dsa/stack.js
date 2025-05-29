@@ -1,10 +1,19 @@
-import { Node } from "./linked-list";
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
 class Stack {
   constructor(value) {
     const newNode = new Node(value);
     this.top = newNode;
     this.length = 1;
+  }
+
+  peek() {
+    return this.top;
   }
 
   push(value) {
@@ -30,3 +39,19 @@ class Stack {
     return temp;
   }
 }
+
+const stack = new Stack(10);
+stack.push(4);
+stack.push(40);
+stack.push(2);
+stack.push(3);
+stack.push(8);
+stack.push(6);
+stack.pop();
+stack.pop();
+stack.pop();
+stack.pop();
+stack.pop();
+console.log(stack.peek());
+
+console.log(stack);

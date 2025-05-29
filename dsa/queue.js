@@ -1,6 +1,11 @@
-import { Node } from "./linked-list";
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
-class Stack {
+class Queue {
   constructor(value) {
     const newNode = new Node(value);
     this.first = newNode;
@@ -26,7 +31,7 @@ class Stack {
 
     let temp = this.first;
 
-    if (this.length) {
+    if (this.length === 1) {
       this.first = null;
       this.last = null;
     } else {
@@ -37,3 +42,13 @@ class Stack {
     return temp;
   }
 }
+
+const queue = new Queue("MATT");
+queue.enqueue("Martha");
+queue.enqueue("Pavel");
+queue.enqueue("Oscar");
+queue.dequeue();
+queue.dequeue();
+queue.dequeue();
+
+console.log(queue);
